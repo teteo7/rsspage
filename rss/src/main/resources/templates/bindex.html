@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>banana apple view</title>
+</head>
+<body>
+<h1>여기에 데이터를 return 해서 list로 출력해야 해요</h1>
+
+<table>
+    <tr th:each="list: ${data}">
+        <td th:text="${list}"></td>
+    </tr>
+</table>
+
+<!--<th:block th:each="datas:${data}">-->
+<!--    <h1 th:text="${datas}"></h1>-->
+<!--</th:block>-->
+
+
+<!--<div th:text="${data}">출력</div>-->
+
+<!--<ol>-->
+<!--<li th:text="데이터결과: + ${data[0]}"> 손님</li>-->
+<!--</ol>-->
+
+<!--<p th:text="데이터결과: + ${data}"> 손님</p>-->
+
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>title</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="list: ${data}">-->
+<!--        <td th:text="${list.title}"></td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+</body>
+</html>

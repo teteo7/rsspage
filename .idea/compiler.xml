@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="rss.rss.main" target="11" />
-      <module name="rss.rss.test" target="11" />
+      <module name="rss.rss.main~1" target="11" />
+      <module name="rss.rss.test~1" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

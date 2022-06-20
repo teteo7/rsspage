@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.openqa.selenium.*;
 
 @Controller
 public class indexController {
@@ -15,10 +16,11 @@ public class indexController {
         return "apple";
     }
 
-//    URL에 param값 넣었는데 안되
+    //    URL에 param값 넣었는데 안되
     @GetMapping("list")
     @ResponseBody
-    public String list(@RequestParam("param") String param, Model model){
-        return "list"+param;
+    public String list(@RequestParam("param") String param) {
+
+        return "list" + param;
     }
 }

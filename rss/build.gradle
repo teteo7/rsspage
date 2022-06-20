@@ -15,7 +15,9 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' //타임리프 템플릿 엔진(View)
 	implementation 'org.springframework.boot:spring-boot-starter-web' // 톰켓 서버, Spring Web MVC
+	implementation 'org.seleniumhq.selenium:selenium-java:4.2.1' // selenium
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 tasks.named('test') {
