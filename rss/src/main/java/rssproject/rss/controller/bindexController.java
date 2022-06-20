@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -27,10 +29,24 @@ public class bindexController {
         driver = new ChromeDriver();
 
         try{
+//            List<String> elements = new ArrayList<>(getDataList());
+//            System.out.println(elements.getClass().getName());
+//            System.out.println("bindex: bbbbbbbbbbbbbb ");
+//            for(int i=0; i<10; i++)
+//            {
+//                System.out.println(elements.get(i));
+//            }
 
             System.out.println("BBBBBBBBBBBBBBBBBBBbbindexPage");
-            System.out.println(getDataList().getClass().getName());
-            System.out.println(getDataList());
+//            System.out.println(getDataList().getClass().getName());
+//            System.out.println("bindex: "+getDataList().get(2));
+//            System.out.println("bindex: "+ getDataList().toArray());
+            System.out.println("=====================================");
+//            System.out.println("bibibibindex: "+ getDataList().toArray());
+//            System.out.println("bibibibindex: "+ getDataList().toString());
+//            System.out.println("bibibibindex: "+ getDataList().getClass());
+
+
 //            Object a= getDataList();
 //            model.addAttribute("data", a);
 
@@ -40,8 +56,13 @@ public class bindexController {
 //            String c= String.valueOf(b);
 
 //            String arr[]= getDataList().toArray(new String[0]);
-            model.addAttribute("data", getDataList());
+//            System.out.println(getDataList().getClass().getName());
+//            model.addAttribute("data", getDataList().toArray().toString());
 
+            List<String> list= getDataList();
+            String[] arr= new String[10];
+            Integer[] arr1 =new Integer[10];
+            model.addAttribute("data", list.toArray(arr1));
 
         }catch(InterruptedException e){
             e.printStackTrace();
@@ -57,13 +78,19 @@ public class bindexController {
 
 
 //        System.out.println(elements.getClass().getName());
-        List<WebElement> elements= driver.findElements(By.xpath("//*[@id=\"main_content\"]/div[2]/ul[1]/li[1]/dl/dt[2]/a"));
 
-        for (WebElement element : elements){
-            String a= element.getText();
-            System.out.println(a.getClass().getName());
-            System.out.println("=================");
-            System.out.println(a);
+//        List<WebElement> elements= driver.findElements(By.xpath("//*[@id=\"main_content\"]/div[2]/ul[1]/li['+i+']/dl/dt[2]/a"));
+        for(int i=0; i<10; i++){
+            List<WebElement> elements= driver.findElements(By.xpath("//*[@id=\"main_content\"]/div[2]/ul[1]/li["+i+"]/dl/dt[2]/a"));
+//            System.out.println(i+"째 기사");
+
+            for (WebElement element : elements){
+                String a= element.getText();
+//                System.out.println(a.getClass().getName());
+//                System.out.println("=================");
+                System.out.println(i+"번째기사: "+ a);
+
+            }
         }
 
         return list;

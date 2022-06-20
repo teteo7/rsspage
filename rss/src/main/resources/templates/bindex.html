@@ -6,12 +6,19 @@
 </head>
 <body>
 <h1>여기에 데이터를 return 해서 list로 출력해야 해요</h1>
+<div>데이터 출력</div>
 
-<table>
-    <tr th:each="list: ${data}">
-        <td th:text="${list}"></td>
-    </tr>
-</table>
+<th:block th:each="datas:${data}">
+    <h1 th:text="${datas}"></h1>
+</th:block>
+
+<!--sequence-->
+
+<!--<table>-->
+<!--    <tr th:each="list: ${data}">-->
+<!--        <td th:text="${list}"></td>-->
+<!--    </tr>-->
+<!--</table>-->
 
 <!--<th:block th:each="datas:${data}">-->
 <!--    <h1 th:text="${datas}"></h1>-->
